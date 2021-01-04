@@ -1,24 +1,18 @@
 ###
 #-------------------------------------------------------------------------------
-# day01triple.py
+# part02repair.py
 #-------------------------------------------------------------------------------
 #
 # Author:       Alwin Tareen
 # Created:      Dec 01, 2020
-# Execution:    python3 day01triple.py day01input.txt
+# Execution:    python3 part02repair.py
 #
 # This program finds the three entries that sum to 2020, and multiplies them.
 #
 ##
 
-from sys import argv, exit
-
-def main():
-    if len(argv) != 2:
-        print('Usage: python3 day01triple.py day01input.txt')
-        exit(1)
-
-    with open(argv[1], 'r') as fhand:
+def repair(data):
+    with open(data, 'r') as fhand:
         entries = fhand.readlines()
     
     entries = [int(x) for x in entries]
@@ -28,8 +22,10 @@ def main():
         for j in range(i+1, len(entries)-1):
             for k in range(j+1, len(entries)):
                 if entries[i] + entries[j] + entries[k] == 2020:
-                    print(f'result: {entries[i] * entries[j] * entries[k]}')
-                    break
+                    return entries[i] * entries[j] * entries[k]
+
+def main():
+    print(f'result: {repair("day01input.txt")}')
 
 if __name__ == '__main__':
     main()
