@@ -30,6 +30,6 @@ def password(data):
 def main():
     print(f'result: {password("day02givendata.txt")}')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
 
