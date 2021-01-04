@@ -24,7 +24,7 @@ def report(data):
                 return entries[i] * entries[j]
 
 def main():
-    print(f'result: {report("day01input.txt")}')
+    print(f'result: {report("day01givendata.txt")}')
 
 if __name__ == '__main__':
     main()

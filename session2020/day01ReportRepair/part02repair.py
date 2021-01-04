@@ -25,7 +25,7 @@ def repair(data):
                     return entries[i] * entries[j] * entries[k]
 
 def main():
-    print(f'result: {repair("day01input.txt")}')
+    print(f'result: {repair("day01givendata.txt")}')
 
 if __name__ == '__main__':
     main()

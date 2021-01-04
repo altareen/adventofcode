@@ -17,16 +17,16 @@ import pytest
 
 # Part 1: report
 @pytest.mark.parametrize('data, expected', [
-    ('day01sample.txt', 514579),
-    ('day01input.txt', 788739)
+    ('day01sampledata.txt', 514579),
+    ('day01givendata.txt', 788739)
 ])
 def test_report(data, expected):
     assert report(data) == expected
 
 # Part 2: repair
 @pytest.mark.parametrize('data, expected', [
-    ('day01sample.txt', 241861950),
-    ('day01input.txt', 178724430)
+    ('day01sampledata.txt', 241861950),
+    ('day01givendata.txt', 178724430)
 ])
 def test_repair(data, expected):
     assert repair(data) == expected
