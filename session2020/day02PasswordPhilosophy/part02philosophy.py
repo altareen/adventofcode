@@ -1,26 +1,20 @@
 ###
 #-------------------------------------------------------------------------------
-# day02positions.py
+# part02philosophy.py
 #-------------------------------------------------------------------------------
 #
 # Author:       Alwin Tareen
 # Created:      Dec 02, 2020
-# Execution:    python3 day02positions.py day02input.txt
+# Execution:    python3 part02philosophy
 #
 # This program determines the number of passwords that are valid.
 #
 ##
 
-from sys import argv, exit
 
-def main():
-    if len(argv) != 2:
-        print("Usage: python3 day02positions.py day02input.txt")
-        exit(1)
-    
+def philosophy(data):
     quantity = 0
-    
-    with open(argv[1], "r") as fhand:
+    with open(data, 'r') as fhand:
         for row in fhand:
             row = row.rstrip()
             entry = row.split()
@@ -32,8 +26,10 @@ def main():
 
             if (password[first] == letter and password[second] != letter) or (password[first] != letter and password[second] == letter):
                 quantity += 1
+    return quantity
 
-    print(f"quantity: {quantity}")
+def main():
+    print(f'result: {philosophy("day02givendata.txt")}')
 
 if __name__ == "__main__":
     main()

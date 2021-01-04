@@ -1,39 +1,34 @@
 ###
 #-------------------------------------------------------------------------------
-# day02passwords.py
+# part01password.py
 #-------------------------------------------------------------------------------
 #
 # Author:       Alwin Tareen
 # Created:      Dec 02, 2020
-# Execution:    python3 day02passwords.py day02input.txt
+# Execution:    python3 part01password.py
 #
 # This program determines the number of passwords that are valid.
 #
 ##
 
-from sys import argv, exit
-
-def main():
-    if len(argv) != 2:
-        print("Usage: python3 day02passwords.py day02input.txt")
-        exit(1)
-    
+def password(data):
     quantity = 0
-    
-    with open(argv[1], "r") as fhand:
+    with open(data, 'r') as fhand:
         for row in fhand:
             row = row.rstrip()
             entry = row.split()
 
             letter = entry[1][:1]
             password = entry[2]
-            first = int(entry[0].split("-")[0])
-            second = int(entry[0].split("-")[1])
+            first = int(entry[0].split('-')[0])
+            second = int(entry[0].split('-')[1])
 
             if password.count(letter) >= first and password.count(letter) <= second:
                 quantity += 1
+    return quantity
 
-    print(f"quantity: {quantity}")
+def main():
+    print(f'result: {password("day02givendata.txt")}')
 
 if __name__ == "__main__":
     main()
