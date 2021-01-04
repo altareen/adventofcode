@@ -5,7 +5,7 @@
 #
 # Author:       Alwin Tareen
 # Created:      Dec 02, 2020
-# Execution:    python3 part02philosophy
+# Execution:    python3 part02philosophy.py
 #
 # This program determines the number of passwords that are valid.
 #
