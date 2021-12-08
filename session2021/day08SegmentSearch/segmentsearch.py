@@ -38,19 +38,19 @@ def search(data):
                 elif len(segment) == 7:
                     encoding[8] = segment
             for segment in segments:
-                if len(segment) == 5 and encoding[1][0] in segment and encoding[1][1] in segment:
+                if len(segment) == 5 and set(encoding[1]).issubset(set(segment)):
                     encoding[3] = segment
             for segment in segments:
-                if len(segment) == 6 and encoding[4][0] in segment and encoding[4][1] in segment and encoding[4][2] in segment and encoding[4][3] in segment:
+                if len(segment) == 6 and set(encoding[4]).issubset(set(segment)):
                     encoding[9] = segment
             for segment in segments:
-                if len(segment) == 6 and encoding[7][0] in segment and encoding[7][1] in segment and encoding[7][2] in segment and segment != encoding[9]:
+                if len(segment) == 6 and set(encoding[7]).issubset(set(segment)) and segment != encoding[9]:
                     encoding[0] = segment
             for segment in segments:
                 if len(segment) == 6 and segment != encoding[0] and segment != encoding[9]:
                     encoding[6] = segment
             for segment in segments:
-                if len(segment) == 5 and segment[0] in encoding[9] and segment[1] in encoding[9] and segment[2] in encoding[9] and segment[3] in encoding[9] and segment[4] in encoding[9] and segment != encoding[3]:
+                if len(segment) == 5 and set(segment).issubset(set(encoding[9])) and segment != encoding[3]:
                     encoding[5] = segment
             for segment in segments:
                 if len(segment) == 5 and segment != encoding[5] and segment != encoding[3]:
