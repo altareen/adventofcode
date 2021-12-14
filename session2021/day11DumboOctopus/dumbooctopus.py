@@ -61,6 +61,8 @@ def dumbo(data):
             for i, num in enumerate(row):
                 row[i] = int(num)
         
+        global total
+        total = 0
         numTrials = 100
         for trial in range(numTrials):
             # increase energy level by 1
@@ -103,9 +105,9 @@ def octopus(data):
 
 # display puzzle answers
 def main():
-#    print(f'[dumbo] sample result: {dumbo("sampledata.txt")}')
+    print(f'[dumbo] sample result: {dumbo("sampledata.txt")}')
     print(f'[dumbo] entire result: {dumbo("entiredata.txt")}')
-#    print(f'[octopus] sample result: {octopus("sampledata.txt")}')
+    print(f'[octopus] sample result: {octopus("sampledata.txt")}')
     print(f'[octopus] entire result: {octopus("entiredata.txt")}')
 
 if __name__ == '__main__':
