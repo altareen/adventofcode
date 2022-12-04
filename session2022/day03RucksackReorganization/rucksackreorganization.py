@@ -13,14 +13,14 @@
 
 import string
 
+lowercase = dict(zip(string.ascii_lowercase, range(1, 27)))
+uppercase = dict(zip(string.ascii_uppercase, range(27, 53)))
+priorities = {**lowercase, **uppercase}
+
 # part one
 def rucksack(data):
     with open(data, 'r') as f:
         entries = f.readlines()
-    
-    lowercase = dict(zip(string.ascii_lowercase, range(1, 27)))
-    uppercase = dict(zip(string.ascii_uppercase, range(27, 53)))
-    priorities = {**lowercase, **uppercase}
     
     compartments = []
     rucksacks = [item.strip() for item in entries]
@@ -38,10 +38,6 @@ def rucksack(data):
 def reorganization(data):
     with open(data, 'r') as f:
         entries = f.readlines()
-
-    lowercase = dict(zip(string.ascii_lowercase, range(1, 27)))
-    uppercase = dict(zip(string.ascii_uppercase, range(27, 53)))
-    priorities = {**lowercase, **uppercase}
     
     compartments = []
     rucksacks = [item.strip() for item in entries]
