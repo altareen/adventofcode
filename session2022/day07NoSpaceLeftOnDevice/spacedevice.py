@@ -39,10 +39,6 @@ def space(data):
     terminal = [item.strip() for item in entries]
     root = generate_tree(terminal)
 
-    # display the directory tree
-#    for pre, fill, node in RenderTree(root):
-#        print("%s%s" % (pre, node.name))
-
     total = 0
     result = [node for node in PreOrderIter(root) if len(node.name.split()) == 1]
     for item in result:
@@ -53,7 +49,6 @@ def space(data):
                 current += int(entity.split()[0])
         if current <= 100000:
             total += current
-
     return total
 
 # part two
@@ -82,7 +77,6 @@ def device(data):
                 current += int(entity.split()[0])
         if current >= required_size and current < smallest:
             smallest = current
-
     return smallest
 
 # display puzzle answers
